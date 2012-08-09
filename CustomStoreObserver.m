@@ -104,21 +104,21 @@
 -(void) provideContent:(NSString *)productIdentifier{
 	
 	// From Free
-	if ([productIdentifier isEqualToString:@"com.LearnersCloud.iEvaluatorForiPhone.English.250"]) {
+	if ([productIdentifier isEqualToString:@"com.LearnersCloud.iEvaluatorForiPhone.Physics.250"]) {
 		
 		[[NSUserDefaults standardUserDefaults] setObject:@"2" forKey:@"AccessLevel"];
-	
+        
 	}
-		 
-	else if ([productIdentifier isEqualToString:@"com.LearnersCloud.iEvaluatorForiPhone.English.500"])
-		 
+    
+	else if ([productIdentifier isEqualToString:@"com.LearnersCloud.iEvaluatorForiPhone.Physics.500"])
+        
 	{
 		[[NSUserDefaults standardUserDefaults] setObject:@"3" forKey:@"AccessLevel"];	 
-			 
-			 
+        
+        
 	}
 	
-	else if ([productIdentifier isEqualToString:@"com.LearnersCloud.iEvaluatorForiPhone.English.750"])
+	else if ([productIdentifier isEqualToString:@"com.LearnersCloud.iEvaluatorForiPhone.Physics.750"])
 		
 	{
 		[[NSUserDefaults standardUserDefaults] setObject:@"4" forKey:@"AccessLevel"];	 
@@ -126,62 +126,65 @@
 		
 	}
 	
-	else if ([productIdentifier isEqualToString:@"com.LearnersCloud.iEvaluatorForiPhone.English.1040"])
+	else if ([productIdentifier isEqualToString:@"com.LearnersCloud.iEvaluatorForiPhone.Physics.1000"])   
 		
 	{
 		[[NSUserDefaults standardUserDefaults] setObject:@"5" forKey:@"AccessLevel"];	 
 		
 		
 	}
-	// From 250
+   	// From 250
 	
-	else if ([productIdentifier isEqualToString:@"com.LearnersCloud.iEvaluatorForiPhone.English.250To500"])
+	else if ([productIdentifier isEqualToString:@"com.LearnersCloud.iEvaluatorForiPhone.Physics.250To500"])
 	{
 		
 		[[NSUserDefaults standardUserDefaults] setObject:@"3" forKey:@"AccessLevel"];
 		
 	}
 	
-	else if ([productIdentifier isEqualToString:@"com.LearnersCloud.iEvaluatorForiPhone.English.250To750"])
+	else if ([productIdentifier isEqualToString:@"com.LearnersCloud.iEvaluatorForiPhone.Physics.250To750"])
 	{
 		
 		[[NSUserDefaults standardUserDefaults] setObject:@"4" forKey:@"AccessLevel"];
 		
 	}
 	
-	else if ([productIdentifier isEqualToString:@"com.LearnersCloud.iEvaluatorForiPhone.English.250To1040"])
+	else if ([productIdentifier isEqualToString:@"com.LearnersCloud.iEvaluatorForiPhone.Physics.250To1000"])
 	{
 		
 		[[NSUserDefaults standardUserDefaults] setObject:@"5" forKey:@"AccessLevel"];
 		
 	}
+    
 	// From 500
 	
-	else if ([productIdentifier isEqualToString:@"com.LearnersCloud.iEvaluatorForiPhone.English.500To750"])
+	else if ([productIdentifier isEqualToString:@"com.LearnersCloud.iEvaluatorForiPhone.Physics.500To750"])
 	{
 		
 		[[NSUserDefaults standardUserDefaults] setObject:@"4" forKey:@"AccessLevel"];
 		
 	}
 	
-	else if ([productIdentifier isEqualToString:@"com.LearnersCloud.iEvaluatorForiPhone.English.500To1040"])
+	else if ([productIdentifier isEqualToString:@"com.LearnersCloud.iEvaluatorForiPhone.Physics.500To1000"])
 	{
 		
 		[[NSUserDefaults standardUserDefaults] setObject:@"5" forKey:@"AccessLevel"];
 		
 	}
+    
+	
+	
 	
 	// From 750
 	
-	else if ([productIdentifier isEqualToString:@"com.LearnersCloud.iEvaluatorForiPhone.English.750To1040"])
+	else if ([productIdentifier isEqualToString:@"com.LearnersCloud.iEvaluatorForiPhone.Physics.750To1000"])
 	{
 		
 		[[NSUserDefaults standardUserDefaults] setObject:@"5" forKey:@"AccessLevel"];
 		
 	}
-	
-	
-	
+    
+    
 			
 						
 			
