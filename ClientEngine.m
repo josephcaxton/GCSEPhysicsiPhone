@@ -32,6 +32,12 @@ int ToReviewQuestions = 0;
 	ToReviewQuestions = 0;
 	self.navigationItem.title = @"Questions";
 	
+    [self.tableView setBackgroundView:nil];
+    NSString *BackImagePath = [[NSBundle mainBundle] pathForResource:@"back320x450" ofType:@"png"];
+	UIImage *BackImage = [[UIImage alloc] initWithContentsOfFile:BackImagePath];
+    self.tableView.backgroundColor = [UIColor colorWithPatternImage:BackImage];
+    [BackImage release];
+
 	
 	EvaluatorAppDelegate *appDelegate = (EvaluatorAppDelegate *)[UIApplication sharedApplication].delegate;
 	
@@ -442,6 +448,16 @@ int ToReviewQuestions = 0;
 	
 }
 
+// For ios 6
+-(NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait;
+    
+    
+}
+
+// for ios 5
+
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
     return  (interfaceOrientation == UIInterfaceOrientationPortrait);
@@ -678,7 +694,7 @@ int ToReviewQuestions = 0;
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
 	
-	ClientAnswers *C_view = [[ClientAnswers alloc] initWithNibName:nil bundle:nil];
+	ClientAnswers *C_view = [[ClientAnswers alloc] initWithStyle:UITableViewStyleGrouped];
 	
 	C_view.FullDataArray = UnchangedArray;
 	ToReviewQuestions = 1;

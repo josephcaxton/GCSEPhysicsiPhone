@@ -20,6 +20,12 @@
     [super viewDidLoad];
 	
 	self.navigationItem.title = @"Answers";
+    [self.tableView setBackgroundView:nil];
+    NSString *BackImagePath = [[NSBundle mainBundle] pathForResource:@"back320x450" ofType:@"png"];
+	UIImage *BackImage = [[UIImage alloc] initWithContentsOfFile:BackImagePath];
+    self.tableView.backgroundColor = [UIColor colorWithPatternImage:BackImage];
+    [BackImage release];
+
 	
 	PopBox = [FullDataArray mutableCopy];
 	NumberCounter = [[NSMutableArray alloc]init];
@@ -50,9 +56,18 @@
 }
 
 
+// For ios 6
+-(NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait;
+    
+    
+}
+
+// for ios 5
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    
+    return  (interfaceOrientation == UIInterfaceOrientationPortrait);
+	
 }
 
 

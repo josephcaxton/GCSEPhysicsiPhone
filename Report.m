@@ -13,10 +13,10 @@
 
 @implementation Report
 
-@synthesize CollectionofArrays,ClearLog,imageView,FinalString,ThisTable,Refresh; //WebBox
+@synthesize CollectionofArrays,imageView,FinalString,ThisTable,Refresh; //WebBox
 
 #define SCREEN_WIDTH 320
-#define SCREEN_HEIGHT 450
+#define SCREEN_HEIGHT 470
 
 //UIActivityIndicatorView *Activity;
 
@@ -24,10 +24,21 @@
 	
 	[super viewDidLoad];
 	
-    UINavigationController *nav =self.navigationController;
-    nav.navigationBar.tintColor = [UIColor blackColor];
+    //UINavigationController *nav =self.navigationController;
+    //nav.navigationBar.tintColor = [UIColor blackColor];
+    
+    NSString *HeaderLocation = [[NSBundle mainBundle] pathForResource:@"header_bar" ofType:@"png"];
+    UIImage *HeaderBackImage = [[UIImage alloc] initWithContentsOfFile:HeaderLocation];
+    [self.navigationController.navigationBar setBackgroundImage:HeaderBackImage forBarMetrics:UIBarMetricsDefault];
+    [HeaderBackImage release];
     
 	//[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
+    UIBarButtonItem *ClearLogs = [[UIBarButtonItem alloc] initWithTitle:@"Clear logs" style:UIBarButtonItemStylePlain target:self action:@selector(ClearAllLogs:)];
+    self.navigationItem.rightBarButtonItem = ClearLogs;
+    [ClearLogs release];
+    
+    
 		
 }
 
@@ -54,6 +65,15 @@
 	ThisTable.delegate = self;
 	ThisTable.dataSource = self;
 	ThisTable.separatorStyle = UITableViewCellSeparatorStyleSingleLineEtched;
+    
+    self.ThisTable.backgroundView = nil;
+    NSString *BackImagePath = [[NSBundle mainBundle] pathForResource:@"back320x450" ofType:@"png"];
+	UIImage *BackImage = [[UIImage alloc] initWithContentsOfFile:BackImagePath];
+    self.ThisTable.backgroundColor = [UIColor colorWithPatternImage:BackImage];
+    
+    [BackImage release];
+    
+
 	
 	[self.view addSubview:ThisTable];
 	
@@ -114,7 +134,7 @@
 			
 			
 			
-			NSString *SiteAddress = [NSString stringWithString:@"http://chart.apis.google.com/chart?"];
+			NSString *SiteAddress = @"http://chart.apis.google.com/chart?";
 			NSString *PlusChartSize = [SiteAddress stringByAppendingString:@"chs=400x400&"];
 			NSString *PlusChartType = [PlusChartSize stringByAppendingString:@"cht=bvs&"];
 			NSString *PlusChartColor = [PlusChartType stringByAppendingString:@"chco=0000FF,FF0000&"];
@@ -359,11 +379,10 @@
 		
 		ThisTable.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 		
-		CGRect CustomFrame = CGRectMake(10, 10, 290.0, 300.0);
+		CGRect CustomFrame = CGRectMake(15, 10, 290.0, 300.0);
 		imageView.frame = CustomFrame;
 		
-		self.ClearLog.frame = CGRectMake(170,310,140,30);
-		//self.Refresh.frame = CGRectMake(10,320,150,30);
+
 		
 		
 		
@@ -377,8 +396,7 @@
 		CGRect CustomFrame = CGRectMake(50, 10, 200.0, 280.0);
 		imageView.frame = CustomFrame;
 		
-		self.ClearLog.frame = CGRectMake(280,320,150,30);
-		//self.Refresh.frame = CGRectMake(90,320,150,30);
+    
 	}
 	
 	
@@ -405,7 +423,7 @@
 {
     
 	//if (indexPath.section ==0) {
-	return SCREEN_HEIGHT -100 ;
+	return SCREEN_HEIGHT -150 ;
 	//}
 	//else {
 	//	return 40;
@@ -437,10 +455,7 @@
 			
 			imageView = [[UIImageView alloc] initWithImage:[self loadLink:FinalString]];
 			[FinalString release];
-			//[Activity stopAnimating];
-			//[Activity release];
-			//Activity = nil;
-			//[(UIActivityIndicatorView *)[self navigationItem].rightBarButtonItem.customView stopAnimating];
+			
 			
 		}
 		
@@ -454,34 +469,15 @@
 		}
 
 		
-		//CGRect CustomFrame = CGRectMake(50, 10, 660.0, 740.0);
-		
-		//imageView.frame = CustomFrame;
 		
 		[cell addSubview:imageView];
 		
 		
 		
-		self.ClearLog = [UIButton buttonWithType:UIButtonTypeRoundedRect];   
-		//self.ClearLog.frame = CGRectMake(170,320,120,40);
-		[ClearLog setTitle:@"Clear Logs" forState:UIControlStateNormal];
-		[ClearLog addTarget:self action:@selector(ClearAllLogs:) forControlEvents:UIControlEventTouchUpInside];
 		
-		[cell addSubview:ClearLog];
-		
-		// Removed refesh button for implemetation later.
-		//self.Refresh = [UIButton buttonWithType:UIButtonTypeRoundedRect];   
-	
-		//[Refresh setTitle:@"Refresh" forState:UIControlStateNormal];
-		//[Refresh addTarget:self action:@selector(RefreshTable:) forControlEvents:UIControlEventTouchUpInside];
-		
-		//[cell addSubview:Refresh];
-		
-		
-		
-		//cell.backgroundColor = [UIColor whiteColor];
 		
 	}
+     cell.backgroundColor = [UIColor clearColor];
 	[self willAnimateRotationToInterfaceOrientation:self.interfaceOrientation duration:1];	
     return cell;
 }
@@ -521,7 +517,6 @@
 	//[WebBox release];
 	[imageView release];
 	[CollectionofArrays release];
-	[ClearLog release];
 	[ThisTable release];
 	[FinalString release];
 	[super dealloc];

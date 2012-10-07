@@ -7,7 +7,7 @@
 //
 
 #import "TabBar.h"
-
+#import "VideoPlayer.h"
 
 @implementation TabBar
 
@@ -59,11 +59,31 @@
 
 
 
+-(NSUInteger)supportedInterfaceOrientations{
+    
+    /*if([self selectedIndex] == 4 )
+     {
+     if ([[self selectedViewController] isKindOfClass: [MPMoviePlayerViewController class]])
+     
+     return UIInterfaceOrientationMaskLandscape;
+     
+     }
+     
+     NSLog(@"%i",[self selectedIndex]);
+     NSLog(@"%@", [self selectedViewController] ); */
+    
+    return UIInterfaceOrientationMaskPortrait;
+    
+    
+}
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-   
+    
+    
 	//return  (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 	//return (interfaceOrientation == UIInterfaceOrientationPortrait);
+	
 	return [self.selectedViewController shouldAutorotateToInterfaceOrientation:interfaceOrientation];
+    
 }
 
 

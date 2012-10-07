@@ -16,20 +16,34 @@ static NSString* const kAnalyticsAccountId = @"UA-33992774-1";
 @implementation EvaluatorAppDelegate
 
 @synthesize window;
-@synthesize	tabBarController,splashView;
-@synthesize AllocatedMarks,Difficulty,Topic,TypeOfQuestion,NumberOfQuestions,NumberOfQuestionsDisplayed,PossibleScores,ClientScores,buyScreen,SecondThread,m_facebook; 
+@synthesize	tabBarController;
+@synthesize AllocatedMarks,Difficulty,Topic,TypeOfQuestion,NumberOfQuestions,NumberOfQuestionsDisplayed,PossibleScores,ClientScores,buyScreen,SecondThread,m_facebook,DeviceScreenType; 
 
 #pragma mark -
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
 	
-    /*Remove the my admin tabbarItem ..
+    //Remove the my admin tabbarItem ..
     NSMutableArray *viewControllers = [NSMutableArray arrayWithArray:tabBarController.viewControllers];
     [viewControllers removeObjectAtIndex:5];
-    [tabBarController setViewControllers:viewControllers];*/
+    [tabBarController setViewControllers:viewControllers];
     
     
+    //Check phone Screen Size
+    if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone){
+        if([UIScreen mainScreen].bounds.size.height == 568.0){
+            //This is iphone5 Screen size
+            DeviceScreenType =[[NSNumber alloc] initWithInt:1136];
+        }
+        else{
+            // This is NOT iPhone5 Screen Size
+            DeviceScreenType = [[NSNumber alloc] initWithInt:0];
+        }
+    }
+    
+    
+
     //Copy database over if the database is not there on the device.Test
 	
 	[self CopyDataBase];
@@ -80,7 +94,9 @@ static NSString* const kAnalyticsAccountId = @"UA-33992774-1";
 	//Add to Window.
 	
 	
-    [window addSubview: tabBarController.view];
+    //[window addSubview: tabBarController.view];
+    self.window.rootViewController = tabBarController;
+
 	[window makeKeyAndVisible];
 	
 	//[self AddSplashScreen];
@@ -119,7 +135,7 @@ static NSString* const kAnalyticsAccountId = @"UA-33992774-1";
 	//[[NSUserDefaults standardUserDefaults] synchronize];
 	if (MyAccessLevel == nil) {
 		
-		NSDictionary *appDefaults  = [NSDictionary dictionaryWithObjectsAndKeys:@"1", AccessLevel, nil];
+		NSDictionary *appDefaults  = [NSDictionary dictionaryWithObjectsAndKeys:@"2", AccessLevel, nil];
 		[[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
 		[[NSUserDefaults standardUserDefaults] synchronize];
 	}
@@ -276,7 +292,7 @@ static NSString* const kAnalyticsAccountId = @"UA-33992774-1";
             
         } 
     }
-	
+	 [FBSession.activeSession close];
 }
 #pragma mark -
 #pragma mark Maintaince routine
@@ -382,94 +398,45 @@ static NSString* const kAnalyticsAccountId = @"UA-33992774-1";
 	return YES;
 }
 
--(void) AddSplashScreen
-{
-	
-	if ([UIDevice currentDevice].orientation != UIDeviceOrientationPortrait){
-		
-        //fade time
-        //CFTimeInterval animation_duration = 0.5;
-        
-        //SplashScreen 
-        splashView = [[[UIImageView alloc] initWithFrame:CGRectMake(0,0, 768, 950)]autorelease];
-        splashView.image = [UIImage imageNamed:@"LandScapePic_Ipad_Splash.png"];
-        [window addSubview:splashView];
-        [window bringSubviewToFront:splashView];
-        
-        //Animation (fade away with zoom effect)
-        //[UIView beginAnimations:nil context:nil];
-        //[UIView setAnimationDuration:animation_duration];
-        //[UIView setAnimationTransition:UIViewAnimationTransitionCurlUp forView:window cache:YES];
-        //[UIView setAnimationDelegate:splashView]; 
-        //[UIView setAnimationDidStopSelector:@selector(removeFromSuperview)];
-        //splashView.alpha = 0.0;
-        //splashView.frame = CGRectMake(-60, -60, 440, 600);
-        
-        //[UIView commitAnimations];
-	}
-	
-	else {
-		//fade time
-		//CFTimeInterval animation_duration = 0.5;
-		
-		//SplashScreen 
-		splashView = [[[UIImageView alloc] initWithFrame:CGRectMake(0,0, 768, 950)]autorelease];
-		splashView.image = [UIImage imageNamed:@"PortraitPic_Ipad_Splash.png"];
-		[window addSubview:splashView];
-		[window bringSubviewToFront:splashView];
-		
-		//Animation (fade away with zoom effect)
-		//[UIView beginAnimations:nil context:nil];
-		//[UIView setAnimationDuration:animation_duration];
-		//[UIView setAnimationTransition:UIViewAnimationTransitionCurlUp forView:window cache:YES];
-		//[UIView setAnimationDelegate:splashView]; 
-		//[UIView setAnimationDidStopSelector:@selector(removeFromSuperview)];
-		//splashView.alpha = 0.0;
-		//splashView.frame = CGRectMake(-60, -60, 440, 600);
-		
-		//[UIView commitAnimations];
-	}
+-(BOOL)isDeviceConnectedToInternet{
     
-	
+    Reachability *reachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus networkStatus = [reachability currentReachabilityStatus];
+    
+    BOOL internetActive = NO;
+    switch (networkStatus)
+    {
+        case NotReachable:
+        {
+            NSLog(@"The internet is down.");
+            
+            internetActive = NO;
+            
+            break;
+        }
+        case ReachableViaWiFi:
+        {
+            NSLog(@"The internet is working via WIFI.");
+            
+            internetActive = YES;
+            
+            break;
+        }
+            
+        case ReachableViaWWAN:
+        {
+            NSLog(@"The internet is working via WWAN.");
+            
+            internetActive = YES;
+            
+            break;
+        }
+    }
+    return internetActive;
+    
+    
 }
 
--(void) Removesplash{
-	
-	[splashView removeFromSuperview];
-	[splashView release];
-	
-	
-	
-}
-
-/*- (void) removeBuyTabIfNotNeededFromTabController:(UITabBarController *)tbController{
- 
- UIBarItem *itemToRemove = nil;
- NSString *AccessLevel = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"AccessLevel"];
- 
- if([AccessLevel intValue] == 5){
- 
- NSMutableArray *ControllerItems = [NSMutableArray arrayWithArray:tbController.];
- 
- for (UIViewController *aView in ControllerItems) 
- {
- if ([[aView tabBarItem].title isEqualToString:@"Buy"])
- {
- itemToRemove = aView.tabBarItem;
- }
- }
- if (itemToRemove)
- {
- [ControllerItems removeObject:itemToRemove];
- [tbController setViewControllers:ControllerItems];
- }
- 
- }
- 
- 
- 
- 
- } */
 
 
 #pragma mark -
@@ -646,42 +613,7 @@ static NSString* const kAnalyticsAccountId = @"UA-33992774-1";
     
     
     
-    
-    /*  NSString *Username = [NSString stringWithFormat:@"r_keay@yahoo.com"];
-     NSString *password = [NSString stringWithFormat:@"Iam6today"];
-     
-     //NSMutableData *webData;
-     // NSMutableString *soapResults;
-     NSURLConnection *conn;
-     
-     // Practive code for calling web service
-     
-     NSString *queryString = [NSString stringWithFormat:@"http://stage.learnerscloud.com/services/ios/authentication.asmx/GetCurrentPackage?emailAddress=%@&password=%@" , Username, password ];
-     
-     NSURL *url = [NSURL URLWithString:queryString];
-     
-     NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url];
-     [req addValue:@"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-     [req addValue:0 forHTTPHeaderField:@"Content-Length"];
-     [req setHTTPMethod:@"GET"];
-     
-     conn = [[NSURLConnection alloc] initWithRequest:req delegate:self];
-     if (conn) {
-     //webData = [[NSMutableData data] retain];
-     } */
-    
-    
-    
-}
 
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    
-    
-    // for testing only
-    // NSString *content = [NSString stringWithUTF8String:[data bytes]];
-    
-    // NSLog(@"%@",content);
-    
     
     
 }
@@ -714,6 +646,19 @@ static NSString* const kAnalyticsAccountId = @"UA-33992774-1";
 }
 
 
+-(BOOL)IsThisiPhone5{
+    
+    if(DeviceScreenType.intValue == 1136 ){
+        
+        return YES;
+    }
+    else
+    {
+        //NSLog(@"Result %i", DeviceScreenType.intValue);
+        return NO;
+    }
+    
+}
 
 
 
@@ -737,6 +682,8 @@ static NSString* const kAnalyticsAccountId = @"UA-33992774-1";
 	[NumberOfQuestionsDisplayed release];
 	[PossibleScores release];
 	[ClientScores release];
+    [DeviceScreenType release];
+
 	
     [super dealloc];
 }
