@@ -27,6 +27,8 @@ static UIWebView *QuestionHeaderBox = nil;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+   // self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 	
 	if (!QuestionHeaderBox) {
 		
@@ -432,9 +434,9 @@ static UIWebView *QuestionHeaderBox = nil;
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = nil; //@"Cell" used nil here to stop table moving text to other cells
     
-    WebViewInCell *cell = (WebViewInCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    WebViewInCell *cell = (WebViewInCell *)[tableView dequeueReusableCellWithIdentifier:nil]; //CellIdentifier
     if (cell == nil) {
         cell = [[[WebViewInCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
@@ -503,6 +505,7 @@ static UIWebView *QuestionHeaderBox = nil;
 					
 					[Continue addTarget:self action:@selector(ContinueToNextQuestion:) forControlEvents:UIControlEventTouchUpInside];
 					[cell addSubview:Continue];
+                    
 					
 					cell.selectionStyle = UITableViewCellSelectionStyleNone;
 					if (self.interfaceOrientation == UIInterfaceOrientationPortrait || self.interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown) {
@@ -818,6 +821,9 @@ static UIWebView *QuestionHeaderBox = nil;
 - (void)AdjustScreenToSee:(int)value{
 	
 	if(value == 1){
+        
+        EvaluatorAppDelegate *appDelegate = (EvaluatorAppDelegate *)[UIApplication sharedApplication].delegate;
+        if([appDelegate IsThisiPhone5] == YES){
 	
 	[UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationDuration:0.3];
@@ -826,12 +832,22 @@ static UIWebView *QuestionHeaderBox = nil;
 	rect.size.height = 690;
 	self.FileListTable.frame = rect;
 	[UIView commitAnimations];
-	}
-	
-	else {
-		
-	}
+            
+        }
+        else{
+            
+            [UIView beginAnimations:nil context:NULL];
+            [UIView setAnimationDuration:0.3];
+            CGRect rect = self.FileListTable.frame;
+            rect.origin.y = -220; // I have changes this to -180 because English has mostly 3 possible answers
+            rect.size.height = 590;
+            self.FileListTable.frame = rect;
+            [UIView commitAnimations];
 
+            }
+	
+    }
+	
 	
 	
 }
