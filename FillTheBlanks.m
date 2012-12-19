@@ -207,6 +207,7 @@ static UIWebView *QuestionHeaderBox = nil;
 		if (PlaySound == YES) {
 			
 		[appDelegate PlaySound:@"Cough"];
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
 			
 		}
 		

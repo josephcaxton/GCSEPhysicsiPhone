@@ -660,6 +660,7 @@ static UIWebView *QuestionHeaderBox = nil;
 			BOOL PlaySound = [[NSUserDefaults standardUserDefaults] boolForKey:@"PlaySound"];
 			if (PlaySound == YES) {
 			[appDelegate PlaySound:@"Cough"];
+                AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
 				
 			}
 			
@@ -764,6 +765,7 @@ static UIWebView *QuestionHeaderBox = nil;
 				if (PlaySound == YES) {
 					
 					[appDelegate PlaySound:@"Cough"];
+                    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
 					
 				}
 				// if user want answer to be shown then show answer
@@ -796,6 +798,7 @@ static UIWebView *QuestionHeaderBox = nil;
 				if (PlaySound == YES) {
 					
 					[appDelegate PlaySound:@"Cough"];
+                    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
 					
 				}
 				// if user want answer to be shown then show answer
