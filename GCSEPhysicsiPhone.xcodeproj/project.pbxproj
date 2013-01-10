@@ -78,6 +78,7 @@
 		7C25C7B315D3BD8200B0B3B7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C25C7B215D3BD8200B0B3B7 /* SystemConfiguration.framework */; };
 		7C25C7B515D3BD8C00B0B3B7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C25C7B415D3BD8C00B0B3B7 /* AudioToolbox.framework */; };
 		7C25C7B715D3BD9600B0B3B7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C25C7B615D3BD9600B0B3B7 /* CoreData.framework */; };
+		7C370654169F1B6B00E4FB95 /* Physics.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7C370653169F1B3A00E4FB95 /* Physics.sqlite */; };
 		7C37E68715D3D5CA0090FEC7 /* Results.xml in Resources */ = {isa = PBXBuildFile; fileRef = 7C25C79F15D3BB5600B0B3B7 /* Results.xml */; };
 		7C37E68B15D3D6710090FEC7 /* Uploads.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C25BF0A15D3B18800B0B3B7 /* Uploads.m */; };
 		7C37E68C15D3D6710090FEC7 /* MultipleChoiceSingleAnswer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C25BF0E15D3B1E800B0B3B7 /* MultipleChoiceSingleAnswer.m */; };
@@ -1136,7 +1137,6 @@
 		7CF4674515F62D9700EAA7A0 /* 1006.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CF4635515F62D9600EAA7A0 /* 1006.pdf */; };
 		7CF4674615F62D9700EAA7A0 /* 1007.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CF4635615F62D9600EAA7A0 /* 1007.pdf */; };
 		7CF4674715F62D9700EAA7A0 /* 1008.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CF4635715F62D9600EAA7A0 /* 1008.pdf */; };
-		7CF4674915F62DFB00EAA7A0 /* Physics.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7CF4674815F62DBD00EAA7A0 /* Physics.sqlite */; };
 		7CF4675715F6304700EAA7A0 /* 517.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CF4675615F6304700EAA7A0 /* 517.pdf */; };
 /* End PBXBuildFile section */
 
@@ -1343,6 +1343,7 @@
 		7C25C7B215D3BD8200B0B3B7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		7C25C7B415D3BD8C00B0B3B7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		7C25C7B615D3BD9600B0B3B7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		7C370653169F1B3A00E4FB95 /* Physics.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Physics.sqlite; sourceTree = "<group>"; };
 		7C8C1948165E4F480026CBB5 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		7C8C1949165E4F480026CBB5 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		7C8C194C165E4F710026CBB5 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
@@ -2354,7 +2355,6 @@
 		7CF4635515F62D9600EAA7A0 /* 1006.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 1006.pdf; sourceTree = "<group>"; };
 		7CF4635615F62D9600EAA7A0 /* 1007.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 1007.pdf; sourceTree = "<group>"; };
 		7CF4635715F62D9600EAA7A0 /* 1008.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 1008.pdf; sourceTree = "<group>"; };
-		7CF4674815F62DBD00EAA7A0 /* Physics.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Physics.sqlite; sourceTree = "<group>"; };
 		7CF4675615F6304700EAA7A0 /* 517.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 517.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -3577,7 +3577,7 @@
 				7CF4635515F62D9600EAA7A0 /* 1006.pdf */,
 				7CF4635615F62D9600EAA7A0 /* 1007.pdf */,
 				7CF4635715F62D9600EAA7A0 /* 1008.pdf */,
-				7CF4674815F62DBD00EAA7A0 /* Physics.sqlite */,
+				7C370653169F1B3A00E4FB95 /* Physics.sqlite */,
 				7C25C79D15D3BB5600B0B3B7 /* DescriptiveAnswers.xml */,
 				7C25C79F15D3BB5600B0B3B7 /* Results.xml */,
 				7C25C7A015D3BB5600B0B3B7 /* AttributionIpad.pdf */,
@@ -3793,7 +3793,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CF4674915F62DFB00EAA7A0 /* Physics.sqlite in Resources */,
+				7C370654169F1B6B00E4FB95 /* Physics.sqlite in Resources */,
 				7C37E6B615D3D6DB0090FEC7 /* DescriptiveAnswers.xml in Resources */,
 				7C37E6B715D3D6DB0090FEC7 /* AttributionIpad.pdf in Resources */,
 				7C37E6B815D3D6DB0090FEC7 /* copyrightlicense_agreement.pdf in Resources */,
@@ -5009,8 +5009,8 @@
 		7C25BEF115D3AE7900B0B3B7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Theta Computer Services Limited";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Theta Computer Services Limited";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../FacebookSDK\"",
@@ -5025,8 +5025,8 @@
 					"\"$(SRCROOT)\"",
 				);
 				PRODUCT_NAME = GCSE;
-				PROVISIONING_PROFILE = "E52AB654-771D-4022-83C4-30E40B7B5273";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E52AB654-771D-4022-83C4-30E40B7B5273";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
