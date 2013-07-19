@@ -86,6 +86,7 @@ static UIWebView *QuestionHeaderBox = nil;
 			CGRect frame = CGRectMake(5, 5, 290, 140);
 			self.Answer1 =[[UITextView alloc] initWithFrame:frame];
 			
+             if(!ShowAnswer){
 			// create a toolbar where we can place some buttons
             TransparentToolBar* toolbar = [[TransparentToolBar alloc]
                                            initWithFrame:CGRectMake(250, 0, 200, 45)];
@@ -108,14 +109,14 @@ static UIWebView *QuestionHeaderBox = nil;
             [buttons addObject:spacer];
             
             
-            if(!ShowAnswer){
+           
                 
                 
                 UIBarButtonItem *EndTestnow = [[UIBarButtonItem alloc] initWithTitle:@"Stop Test" style: UIBarButtonItemStyleBordered target:self action:@selector(StopTest:)];
                 
                 
                 [buttons addObject:EndTestnow];
-            }
+            
             
             
             [toolbar setItems:buttons animated:NO];
@@ -124,7 +125,7 @@ static UIWebView *QuestionHeaderBox = nil;
             self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
                                                       initWithCustomView:toolbar];
 			
-
+                }
 			
 			
 		}

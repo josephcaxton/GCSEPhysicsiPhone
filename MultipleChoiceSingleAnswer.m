@@ -84,7 +84,7 @@ static UIWebView *QuestionHeaderBox = nil;
 		{
 			// This is QItem_View  : View Mode
 			
-            
+            if(!ShowAnswer){
             // create a toolbar where we can place some buttons
             TransparentToolBar* toolbar = [[TransparentToolBar alloc]
                                            initWithFrame:CGRectMake(250, 0, 200, 45)];
@@ -107,14 +107,14 @@ static UIWebView *QuestionHeaderBox = nil;
             [buttons addObject:spacer];
             
             
-            if(!ShowAnswer){
+            
                 
                 
                 UIBarButtonItem *EndTestnow = [[UIBarButtonItem alloc] initWithTitle:@"Stop Test" style: UIBarButtonItemStyleBordered target:self action:@selector(StopTest:)];
                 
                 
                 [buttons addObject:EndTestnow];
-            }
+            
             
             
             [toolbar setItems:buttons animated:NO];
@@ -123,7 +123,7 @@ static UIWebView *QuestionHeaderBox = nil;
             self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
                                                       initWithCustomView:toolbar];
 			
-
+            }
 			
 			NSString *result = [NSString stringWithFormat:@"%@",[QItem_View Question]];
 			SFileName_Edit = result;
