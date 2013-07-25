@@ -687,7 +687,9 @@ static UIWebView *QuestionHeaderBox = nil;
 			
 			if (ShowMyAnswer == YES){
 				
-				
+				UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+                cell.contentView.backgroundColor=[UIColor redColor];
+                
 				ShowAnswer = TRUE;
                 [self AdjustScreenToSee: 1];
 				[tableView reloadData];
