@@ -590,8 +590,8 @@ static NSString* const kAnalyticsAccountId = @"UA-33992774-1";
    
     
     //NSString *DeviceUDID = [NSString stringWithFormat:@"%@",[UIDevice currentDevice].uniqueIdentifier];
-     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"6.0")){
-     NSString *DeviceUDID = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+     //if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"6.0")){
+     NSString *DeviceUDID = @"Deprecated";//[[[UIDevice currentDevice] identifierForVendor] UUIDString];
     
     NSString *DeviceTokenRemoveCh1 = [[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
     
@@ -618,7 +618,7 @@ static NSString* const kAnalyticsAccountId = @"UA-33992774-1";
 
     
     
-}
+//}
 
 
 - (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err { 

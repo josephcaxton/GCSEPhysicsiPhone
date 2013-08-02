@@ -102,6 +102,7 @@
 		7C296764179836F100F58C25 /* TransparentToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C296763179836DE00F58C25 /* TransparentToolBar.m */; };
 		7C2967651798370800F58C25 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C29670E179835E200F58C25 /* libCorePlot-CocoaTouch.a */; };
 		7C29676817983A7300F58C25 /* btn_start_test.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C29676717983A7300F58C25 /* btn_start_test.png */; };
+		7C3155E217ABC8D800E1C22A /* Physics.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7CF2A08617A1495C00195CBB /* Physics.sqlite */; };
 		7C32EE2A16DF73FC0095954B /* restore.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C32EE2916DF73FC0095954B /* restore.png */; };
 		7C37E68715D3D5CA0090FEC7 /* Results.xml in Resources */ = {isa = PBXBuildFile; fileRef = 7C25C79F15D3BB5600B0B3B7 /* Results.xml */; };
 		7C37E68B15D3D6710090FEC7 /* Uploads.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C25BF0A15D3B18800B0B3B7 /* Uploads.m */; };
@@ -4051,6 +4052,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C3155E217ABC8D800E1C22A /* Physics.sqlite in Resources */,
 				7C37E6B615D3D6DB0090FEC7 /* DescriptiveAnswers.xml in Resources */,
 				7C37E6B715D3D6DB0090FEC7 /* AttributionIpad.pdf in Resources */,
 				7C37E6B815D3D6DB0090FEC7 /* copyrightlicense_agreement.pdf in Resources */,
@@ -5265,8 +5267,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Joseph caxton (99S98QLWW3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joseph caxton (99S98QLWW3)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../FacebookSDK\"",
@@ -5285,8 +5287,8 @@
 					"-lsqlite3.0",
 				);
 				PRODUCT_NAME = GCSE;
-				PROVISIONING_PROFILE = "2A554C3A-C727-4954-BCF4-7CCAACEAD187";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2A554C3A-C727-4954-BCF4-7CCAACEAD187";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
