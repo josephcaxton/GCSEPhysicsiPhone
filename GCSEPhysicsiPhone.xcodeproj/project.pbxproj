@@ -114,7 +114,6 @@
 		7C64BCA8171709F900DC9A4C /* 848.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7C64BCA5171709F900DC9A4C /* 848.pdf */; };
 		7C64BCA9171709F900DC9A4C /* 849.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7C64BCA6171709F900DC9A4C /* 849.pdf */; };
 		7C64BCAB17170A1900DC9A4C /* 850.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7C64BCAA17170A1900DC9A4C /* 850.pdf */; };
-		7C9C26081840AF0F00A50CF0 /* Physics.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7C9C26071840AEFB00A50CF0 /* Physics.sqlite */; };
 		7CADFD0716E8E9480028A3C9 /* 859.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CADFD0616E8E9480028A3C9 /* 859.pdf */; };
 		7CB1958B167B5E1900803F11 /* 72.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CB1958A167B5E1900803F11 /* 72.pdf */; };
 		7CB5525E1712BF71006AA4D8 /* 238.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CB552591712BF71006AA4D8 /* 238.pdf */; };
@@ -1377,7 +1376,7 @@
 		7C64BCA5171709F900DC9A4C /* 848.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 848.pdf; sourceTree = "<group>"; };
 		7C64BCA6171709F900DC9A4C /* 849.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 849.pdf; sourceTree = "<group>"; };
 		7C64BCAA17170A1900DC9A4C /* 850.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 850.pdf; sourceTree = "<group>"; };
-		7C9C26071840AEFB00A50CF0 /* Physics.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Physics.sqlite; sourceTree = "<group>"; };
+		7C980EDF187C05350001086E /* Physics.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Physics.sqlite; sourceTree = "<group>"; };
 		7CADFD0616E8E9480028A3C9 /* 859.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 859.pdf; sourceTree = "<group>"; };
 		7CB1958A167B5E1900803F11 /* 72.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 72.pdf; sourceTree = "<group>"; };
 		7CB552591712BF71006AA4D8 /* 238.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 238.pdf; sourceTree = "<group>"; };
@@ -3591,7 +3590,7 @@
 				7CF4635515F62D9600EAA7A0 /* 1006.pdf */,
 				7CF4635615F62D9600EAA7A0 /* 1007.pdf */,
 				7CF4635715F62D9600EAA7A0 /* 1008.pdf */,
-				7C9C26071840AEFB00A50CF0 /* Physics.sqlite */,
+				7C980EDF187C05350001086E /* Physics.sqlite */,
 				7C25C79D15D3BB5600B0B3B7 /* DescriptiveAnswers.xml */,
 				7C25C79F15D3BB5600B0B3B7 /* Results.xml */,
 				7C25C7A015D3BB5600B0B3B7 /* AttributionIpad.pdf */,
@@ -3872,7 +3871,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C9C26081840AF0F00A50CF0 /* Physics.sqlite in Resources */,
 				7C37E6B615D3D6DB0090FEC7 /* DescriptiveAnswers.xml in Resources */,
 				7C37E6B715D3D6DB0090FEC7 /* AttributionIpad.pdf in Resources */,
 				7C37E6B815D3D6DB0090FEC7 /* copyrightlicense_agreement.pdf in Resources */,
