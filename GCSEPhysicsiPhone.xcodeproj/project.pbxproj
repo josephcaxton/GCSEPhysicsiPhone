@@ -1099,6 +1099,8 @@
 		7CF4674615F62D9700EAA7A0 /* 1007.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CF4635615F62D9600EAA7A0 /* 1007.pdf */; };
 		7CF4674715F62D9700EAA7A0 /* 1008.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CF4635715F62D9600EAA7A0 /* 1008.pdf */; };
 		7CF4675715F6304700EAA7A0 /* 517.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7CF4675615F6304700EAA7A0 /* 517.pdf */; };
+		CD81ED7918A84B1F00FC551E /* NumberOfQuestionsToChoose.m in Sources */ = {isa = PBXBuildFile; fileRef = CD81ED7818A84B1F00FC551E /* NumberOfQuestionsToChoose.m */; };
+		CD81ED7A18A84B6F00FC551E /* Physics.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7C980EDF187C05350001086E /* Physics.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -2362,6 +2364,9 @@
 		7CF4635615F62D9600EAA7A0 /* 1007.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 1007.pdf; sourceTree = "<group>"; };
 		7CF4635715F62D9600EAA7A0 /* 1008.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 1008.pdf; sourceTree = "<group>"; };
 		7CF4675615F6304700EAA7A0 /* 517.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 517.pdf; sourceTree = "<group>"; };
+		CD81ED7718A84B1F00FC551E /* NumberOfQuestionsToChoose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberOfQuestionsToChoose.h; sourceTree = "<group>"; };
+		CD81ED7818A84B1F00FC551E /* NumberOfQuestionsToChoose.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberOfQuestionsToChoose.m; sourceTree = "<group>"; };
+		CD81ED7B18A84D3300FC551E /* Evaluator 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Evaluator 2.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2553,6 +2558,8 @@
 				7C25BF1A15D3B21F00B0B3B7 /* FillTheBlanks.m */,
 				7C25BF1B15D3B21F00B0B3B7 /* FillTheBlanks1.h */,
 				7C25BF1C15D3B21F00B0B3B7 /* FillTheBlanks1.m */,
+				CD81ED7718A84B1F00FC551E /* NumberOfQuestionsToChoose.h */,
+				CD81ED7818A84B1F00FC551E /* NumberOfQuestionsToChoose.m */,
 			);
 			name = "Template Views";
 			sourceTree = "<group>";
@@ -3871,6 +3878,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD81ED7A18A84B6F00FC551E /* Physics.sqlite in Resources */,
 				7C37E6B615D3D6DB0090FEC7 /* DescriptiveAnswers.xml in Resources */,
 				7C37E6B715D3D6DB0090FEC7 /* AttributionIpad.pdf in Resources */,
 				7C37E6B815D3D6DB0090FEC7 /* copyrightlicense_agreement.pdf in Resources */,
@@ -4951,6 +4959,7 @@
 				7C37E6B015D3D6710090FEC7 /* HelpVideo.m in Sources */,
 				7C37E6B115D3D6710090FEC7 /* Attribution.m in Sources */,
 				7C37E6B215D3D6710090FEC7 /* Buy.m in Sources */,
+				CD81ED7918A84B1F00FC551E /* NumberOfQuestionsToChoose.m in Sources */,
 				7C37E6B315D3D6710090FEC7 /* CustomStoreObserver.m in Sources */,
 				7C37E6B415D3D6710090FEC7 /* LearnersCloudSamplesVideos.m in Sources */,
 				7C25BED415D3AE7800B0B3B7 /* main.m in Sources */,
@@ -5134,6 +5143,7 @@
 			children = (
 				7C25C73415D3B67000B0B3B7 /* Evaluator 2.xcdatamodel */,
 				7C25C73215D3B62900B0B3B7 /* Evaluator.xcdatamodel */,
+				CD81ED7B18A84D3300FC551E /* Evaluator 2.xcdatamodel */,
 			);
 			currentVersion = 7C25C73215D3B62900B0B3B7 /* Evaluator.xcdatamodel */;
 			path = Evaluator.xcdatamodeld;
