@@ -414,7 +414,7 @@ static UIWebView *QuestionHeaderBox = nil;
 		self.FileListTable.frame = CGRectMake(0, 160, SCREEN_WIDTH, SCREEN_HEIGHT - 170);
 		//newLine.frame = CGRectMake(340, 0, 80, 30);
 		ShowAnswerHere.frame = CGRectMake(15,0,138,38);
-		Continue.frame = CGRectMake(15,0,138,38);
+		Continue.frame = CGRectMake(165,0,138,38);
 	}
 	
 	else {
@@ -423,7 +423,7 @@ static UIWebView *QuestionHeaderBox = nil;
 		self.FileListTable.frame = CGRectMake(0, 160, SCREEN_HEIGHT + 30, SCREEN_HEIGHT - 160);
 		//newLine.frame = CGRectMake(340, 0, 80, 30);
 		ShowAnswerHere.frame = CGRectMake(15,0,138,38);
-		Continue.frame = CGRectMake(15,0,138,38);
+		Continue.frame = CGRectMake(165,0,138,38);
 	}
 	
 	
